@@ -42,7 +42,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+if (app.Environment.IsDevelopment())
+{
+    app.UseWebAssemblyDebugging();
+}
+
 app.UseHttpsRedirection();
+
+app.UseBlazorFrameworkFiles();
+
+app.UseStaticFiles();
 
 app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
