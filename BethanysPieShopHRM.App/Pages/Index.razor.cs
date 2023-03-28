@@ -1,6 +1,6 @@
-﻿using BethanysPieShopHRM.Components.Widgets;
+﻿using BethanysPieShopHRM.App.Components.Widgets;
 
-namespace BethanysPieShopHRM.Pages
+namespace BethanysPieShopHRM.App.Pages
 {
     public partial class Index
     {

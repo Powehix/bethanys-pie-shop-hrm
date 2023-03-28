@@ -1,6 +1,6 @@
 ﻿using BethanysPieShopHRM.Shared.Domain;
 
-namespace BethanysPieShopHRM.Models
+namespace BethanysPieShopHRM.App.Models
 {
     public class MockDataService
     {

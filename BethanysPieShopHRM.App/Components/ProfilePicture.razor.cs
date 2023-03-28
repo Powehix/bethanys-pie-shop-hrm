@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace BethanysPieShopHRM.Components
+namespace BethanysPieShopHRM.App.Components
 {
     public partial class ProfilePicture
     {

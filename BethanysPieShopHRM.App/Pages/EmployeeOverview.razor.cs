@@ -1,7 +1,7 @@
-﻿using BethanysPieShopHRM.Models;
+﻿using BethanysPieShopHRM.App.Models;
 using BethanysPieShopHRM.Shared.Domain;
 
-namespace BethanysPieShopHRM.Pages
+namespace BethanysPieShopHRM.App.Pages
 {
     public partial class EmployeeOverview
     {
