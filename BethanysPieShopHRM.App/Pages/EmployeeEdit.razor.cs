@@ -1,6 +1,7 @@
 ﻿using BethanysPieShopHRM.App.Services;
 using BethanysPieShopHRM.Shared.Domain;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace BethanysPieShopHRM.App.Pages
 {
@@ -52,6 +53,18 @@ namespace BethanysPieShopHRM.App.Pages
 
             if (Employee.EmployeeId == 0) //new
             {
+                if (selectedFile != null)
+                {
+                    var file = selectedFile;
+                    Stream stream = file.OpenReadStream();
+                    MemoryStream ms = new();
+                    await stream.CopyToAsync(ms);
+                    stream.Close();
+
+                    Employee.ImageName = file.Name;
+                    Employee.ImageContent = ms.ToArray();
+                }
+
                 var addedEmployee = await EmployeeDataService.AddEmployee(Employee);
                 if (addedEmployee != null)
                 {
@@ -73,6 +86,14 @@ namespace BethanysPieShopHRM.App.Pages
                 Message = "Employee updated successfully.";
                 Saved = true;
             }
+        }
+
+        private IBrowserFile selectedFile;
+
+        private void OnInputFileChange(InputFileChangeEventArgs e)
+        {
+            selectedFile = e.File;
+            StateHasChanged();
         }
 
         protected async Task HandleInvalidSubmit()

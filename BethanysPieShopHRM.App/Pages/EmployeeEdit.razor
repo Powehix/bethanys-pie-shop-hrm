@@ -8,6 +8,16 @@
         <h1 class="page-title">Details for @Employee.FirstName @Employee.LastName</h1>
         <EditForm Model="@Employee" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
 
+            @if (Employee.EmployeeId == 0)
+            {
+                <div class="row mb-3">
+                    <label for="image" class="col-12 col-sm-3">Select image: </label>
+                    <div class="col-md-8">
+                        <InputFile OnChange="OnInputFileChange"></InputFile>
+                    </div>
+                </div>
+            }
+
         <div class="row mb-3">
                 <label for="lastName" class="col-form-label col-md-3">Last name:</label>
                 <div class="col-md-8">
